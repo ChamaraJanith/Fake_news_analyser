@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake News Detector | AI Powered Truth Verification</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div id="canvas-container"></div>
+
+    <div class="overlay">
+      <nav>
+        <div class="logo">VERIFY.AI</div>
+        <div class="nav-links">
+          <!-- Add links if needed -->
+        </div>
+      </nav>
+
+      <section class="hero">
+        <h1>Exposing Truth in the <br />Digital Age</h1>
+        <p>
+          Our advanced AI model analyzes patterns, metadata, and
+          cross-references to detect misinformation before it spreads.
+        </p>
+      </section>
+
+      <div class="detector-card">
+        <form id="checkForm">
+          <div class="input-group">
+            <textarea
+              id="textInput"
+              placeholder="Paste news headline or link here..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-check">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            Analyze Content
+          </button>
+        </form>
+
+        <div class="loading-spinner"></div>
+
+        <div id="results" class="results">
+          <div id="statusBadge" class="status-badge"></div>
+          <h3 id="resultHeader" style="margin-bottom: 0.5rem">
+            Analysis Complete
+          </h3>
+          <p id="resultText" style="color: var(--text-gray)"></p>
+        </div>
+      </div>
+
+      <section class="features">
+        <div class="feature-card">
+          <i class="fa-solid fa-brain"></i>
+          <h3>Advanced AI</h3>
+          <p>
+            Powered by state-of-the-art NLP models designed to detect subtle
+            manipulation tactics.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Real-time Check</h3>
+          <p>
+            Get instant results. Our tool scans multiple APIs and historical
+            data in milliseconds.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Social Protection</h3>
+          <p>
+            Helping communities stay informed and preventing the rapid spread of
+            digital lies.
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2026 Verify.AI - Building a Trustworthy Internet</p>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/three-scene.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
